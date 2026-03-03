@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Barber — Precision Cuts. Timeless Style.</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">EL BARBER</a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#booking" class="nav-cta">Book Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services" class="mob-link">Services</a>
+      <a href="#about" class="mob-link">About</a>
+      <a href="#gallery" class="mob-link">Gallery</a>
+      <a href="#testimonials" class="mob-link">Testimonials</a>
+      <a href="#booking" class="mob-link mob-cta">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Est. 2015 &nbsp;·&nbsp; Downtown</p>
+      <h1 class="hero-title">Precision Cuts.<br /><em>Timeless Style.</em></h1>
+      <p class="hero-sub">Where every visit is a ritual. Step in, leave sharp.</p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn btn-primary">Book an Appointment</a>
+        <a href="#services" class="btn btn-ghost">View Services</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Precision Cuts &nbsp;·&nbsp;</span>
+      <span>Hot Towel Shaves &nbsp;·&nbsp;</span>
+      <span>Beard Sculpting &nbsp;·&nbsp;</span>
+      <span>Fade Specialists &nbsp;·&nbsp;</span>
+      <span>Kids Cuts &nbsp;·&nbsp;</span>
+      <span>Scalp Treatments &nbsp;·&nbsp;</span>
+      <span>Precision Cuts &nbsp;·&nbsp;</span>
+      <span>Hot Towel Shaves &nbsp;·&nbsp;</span>
+      <span>Beard Sculpting &nbsp;·&nbsp;</span>
+      <span>Fade Specialists &nbsp;·&nbsp;</span>
+      <span>Kids Cuts &nbsp;·&nbsp;</span>
+      <span>Scalp Treatments &nbsp;·&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" class="section-pad">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">What We Offer</p>
+        <h2>Our Services</h2>
+        <p class="section-desc">Every service is carried out with care, craft, and attention to detail.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-reveal>
+          <div class="service-number">01</div>
+          <h3>Classic Haircut</h3>
+          <p>A timeless cut tailored to your face shape, lifestyle, and style preference.</p>
+          <div class="service-footer">
+            <span class="price">$35</span>
+            <span class="duration">45 min</span>
+          </div>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-number">02</div>
+          <h3>Skin Fade</h3>
+          <p>Seamless blending from skin to length. Clean, sharp, and effortlessly modern.</p>
+          <div class="service-footer">
+            <span class="price">$45</span>
+            <span class="duration">50 min</span>
+          </div>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-number">03</div>
+          <h3>Hot Towel Shave</h3>
+          <p>The full ritual — pre-shave oil, warm lather, straight razor, and hot towel finish.</p>
+          <div class="service-footer">
+            <span class="price">$55</span>
+            <span class="duration">60 min</span>
+          </div>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-number">04</div>
+          <h3>Beard Sculpt</h3>
+          <p>Defined lines, shaped contours, and a finish that frames your face perfectly.</p>
+          <div class="service-footer">
+            <span class="price">$30</span>
+            <span class="duration">35 min</span>
+          </div>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-number">05</div>
+          <h3>Cut + Beard Combo</h3>
+          <p>The complete package. Leave looking and feeling like a new man.</p>
+          <div class="service-footer">
+            <span class="price">$65</span>
+            <span class="duration">75 min</span>
+          </div>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-number">06</div>
+          <h3>Kids Cut</h3>
+          <p>Patient, fun, and precise. Great cuts for the little ones, every time.</p>
+          <div class="service-footer">
+            <span class="price">$25</span>
+            <span class="duration">30 min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section-pad about-section">
+    <div class="container about-grid">
+      <div class="about-visual" data-reveal>
+        <div class="about-img-wrap">
+          <div class="about-img-placeholder">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path d="M100 30 C60 30 40 60 40 90 C40 140 80 170 100 170 C120 170 160 140 160 90 C160 60 140 30 100 30Z" fill="#c9b99a" opacity="0.3"/>
+              <circle cx="100" cy="85" r="35" fill="#c9b99a" opacity="0.5"/>
+              <rect x="55" y="128" width="90" height="50" rx="8" fill="#c9b99a" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="about-badge">
+            <span class="badge-number">10+</span>
+            <span class="badge-text">Years of<br/>Craft</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-content" data-reveal>
+        <p class="label">The Story</p>
+        <h2>More Than a Haircut.<br />It's an Experience.</h2>
+        <p>El Barber was born from a simple belief: every man deserves a space where he's treated with respect, skill, and a bit of style. We're not just cutting hair — we're building confidence, one visit at a time.</p>
+        <p>Our barbers bring decades of combined experience, a passion for the craft, and an eye for what makes each client unique. No rush. No shortcuts. Just great work done right.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num">5,000+</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">4</span>
+            <span class="stat-label">Master Barbers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Years Open</span>
+          </div>
+        </div>
+        <a href="#booking" class="btn btn-primary">Meet the Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section-pad gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">The Work</p>
+        <h2>Fresh Cuts, Every Time</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item g-tall" data-reveal>
+          <div class="gallery-placeholder" style="background:#1a1a1a;">
+            <span>Skin Fade</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-reveal>
+          <div class="gallery-placeholder" style="background:#2a2520;">
+            <span>Textured Crop</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-reveal>
+          <div class="gallery-placeholder" style="background:#1e1c1a;">
+            <span>Classic Taper</span>
+          </div>
+        </div>
+        <div class="gallery-item g-wide" data-reveal>
+          <div class="gallery-placeholder" style="background:#201e1c;">
+            <span>Beard Sculpt</span>
+          </div>
+        </div>
+        <div class="gallery-item g-tall" data-reveal>
+          <div class="gallery-placeholder" style="background:#252220;">
+            <span>Hot Towel Shave</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-reveal>
+          <div class="gallery-placeholder" style="background:#1c1a18;">
+            <span>Mid Fade</span>
+          </div>
+        </div>
+      </div>
+      <p class="gallery-note">Replace placeholder blocks with your real photos — just swap the <code>.gallery-placeholder</code> divs with <code>&lt;img&gt;</code> tags.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section-pad testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Client Love</p>
+        <h2>What They're Saying</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-reveal>
+          <div class="stars">★★★★★</div>
+          <p>"Best barber I've ever been to. They take their time and the result is always perfect. I won't go anywhere else."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MR</div>
+            <div>
+              <strong>Marcus R.</strong>
+              <span>Regular Client</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card featured" data-reveal>
+          <div class="stars">★★★★★</div>
+          <p>"The hot towel shave is an experience unlike anything else. I come in every two weeks and I always leave feeling fresh and confident. Highly recommend to anyone."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JT</div>
+            <div>
+              <strong>James T.</strong>
+              <span>Monthly Member</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-reveal>
+          <div class="stars">★★★★★</div>
+          <p>"Brought my son for his first real haircut. The barber was so patient and made him feel comfortable. We'll be coming back for sure."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DL</div>
+            <div>
+              <strong>David L.</strong>
+              <span>First-Time Client</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" class="section-pad booking-section">
+    <div class="container booking-grid">
+      <div class="booking-info" data-reveal>
+        <p class="label">Ready?</p>
+        <h2>Book Your<br />Appointment</h2>
+        <p>Walk-ins welcome when available, but we recommend booking ahead to secure your preferred barber and time.</p>
+        <div class="contact-list">
+          <div class="contact-item">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0 1 15 0z"/></svg>
+            <span>123 Main Street, Suite 1<br />Your City, State 00000</span>
+          </div>
+          <div class="contact-item">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z"/></svg>
+            <span>(555) 123-4567</span>
+          </div>
+          <div class="contact-item">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+            <div>
+              <span>Mon – Fri: 9am – 7pm</span><br />
+              <span>Sat: 8am – 6pm</span><br />
+              <span>Sun: 10am – 4pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="booking-form-wrap" data-reveal>
+        <form class="booking-form" id="bookingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Doe" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="(555) 000-0000" required />
+          </div>
+          <div class="form-group">
+            <label for="service">Service</label>
+            <select id="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option>Classic Haircut — $35</option>
+              <option>Skin Fade — $45</option>
+              <option>Hot Towel Shave — $55</option>
+              <option>Beard Sculpt — $30</option>
+              <option>Cut + Beard Combo — $65</option>
+              <option>Kids Cut — $25</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" required />
+            </div>
+            <div class="form-group">
+              <label for="time">Preferred Time</label>
+              <select id="time" required>
+                <option value="" disabled selected>Select time</option>
+                <option>9:00 AM</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>12:00 PM</option>
+                <option>1:00 PM</option>
+                <option>2:00 PM</option>
+                <option>3:00 PM</option>
+                <option>4:00 PM</option>
+                <option>5:00 PM</option>
+                <option>6:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="notes">Notes (optional)</label>
+            <textarea id="notes" rows="3" placeholder="Any preferences or requests..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Request Appointment</button>
+          <p class="form-disclaimer">We'll confirm your booking via phone within 1 hour.</p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">✓</div>
+          <h3>Request Received!</h3>
+          <p>We'll call you within the hour to confirm your appointment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo">EL BARBER</span>
+        <p>Precision cuts. Timeless style.<br />Walk in as you are. Leave looking your best.</p>
+      </div>
+      <div class="footer-links-col">
+        <strong>Navigate</strong>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#booking">Book Now</a>
+      </div>
+      <div class="footer-links-col">
+        <strong>Connect</strong>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Google Maps</a>
+        <a href="#">Yelp</a>
+      </div>
+      <div class="footer-links-col">
+        <strong>Hours</strong>
+        <span>Mon – Fri: 9am – 7pm</span>
+        <span>Saturday: 8am – 6pm</span>
+        <span>Sunday: 10am – 4pm</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 El Barber. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
