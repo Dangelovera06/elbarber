@@ -1,119 +1,116 @@
-/* =============================================
-   EL BARBERSHOP — main.js
-============================================= */
+/* ============================================
+   FORMULA DETAILING — main.js
+   ============================================ */
 
-// ── Navbar scroll effect ──────────────────────────────────
-const navbar  = document.getElementById('navbar');
-const topbar  = document.querySelector('.topbar');
-const topH    = topbar ? topbar.offsetHeight : 36;
+document.addEventListener('DOMContentLoaded', () => {
 
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > topH);
-}, { passive: true });
+  /* ---------- NAVBAR SCROLL ---------- */
+  const navbar = document.getElementById('navbar');
+  const onScroll = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-// ── Mobile hamburger menu ─────────────────────────────────
-const hamburger  = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
+  /* ---------- HAMBURGER / MOBILE NAV ---------- */
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav  = document.getElementById('mobileNav');
 
-hamburger.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('open');
-  hamburger.classList.toggle('open', open);
-  document.body.style.overflow = open ? 'hidden' : '';
-});
-
-mobileMenu.querySelectorAll('.mob-link').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    hamburger.classList.remove('open');
-    document.body.style.overflow = '';
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
   });
-});
 
-// ── Smooth scroll for anchor links ───────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (!target) return;
-    e.preventDefault();
-    const offset = 80;
-    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: 'smooth' });
-  });
-});
-
-// ── Intersection Observer — reveal on scroll ─────────────
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const siblings = [...entry.target.parentElement.querySelectorAll('[data-reveal]')];
-      const idx = siblings.indexOf(entry.target);
-      setTimeout(() => entry.target.classList.add('revealed'), idx * 90);
-      revealObserver.unobserve(entry.target);
+  document.querySelectorAll('.mobile-link, .mobile-cta').forEach(el => {
+    el.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
     });
-  },
-  { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-);
-
-document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
-
-// ── Active nav link on scroll ─────────────────────────────
-const sections   = document.querySelectorAll('section[id], div[id]');
-const navAnchors = document.querySelectorAll('.nav-links a');
-
-const sectionObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    navAnchors.forEach(a => a.style.color = '');
-    const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-    if (active) active.style.color = 'var(--gold)';
   });
-}, { threshold: 0.4 });
 
-sections.forEach(s => sectionObserver.observe(s));
-
-// ── Set date input min to today ───────────────────────────
-const dateInput = document.getElementById('date');
-if (dateInput) {
-  dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
-}
-
-// ── Booking form submit ───────────────────────────────────
-const bookingForm = document.getElementById('bookingForm');
-const formSuccess = document.getElementById('formSuccess');
-
-if (bookingForm) {
-  bookingForm.addEventListener('submit', async e => {
-    e.preventDefault();
-    const btn = bookingForm.querySelector('button[type="submit"]');
-    const orig = btn.textContent;
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    await new Promise(r => setTimeout(r, 1200));
-    bookingForm.classList.add('hidden');
-    formSuccess.classList.add('visible');
+  /* ---------- SMOOTH SCROLL ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const offset = parseInt(getComputedStyle(document.documentElement)
+        .getPropertyValue('--nav-h')) || 72;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
   });
-}
 
-// ── Parallax on hero bg ───────────────────────────────────
-const heroBg = document.querySelector('.hero-bg img');
+  /* ---------- REVEAL ON SCROLL ---------- */
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+  revealEls.forEach(el => revealObserver.observe(el));
 
-if (heroBg && window.matchMedia('(min-width: 768px)').matches) {
-  window.addEventListener('scroll', () => {
-    heroBg.style.transform = `translateY(${window.scrollY * 0.2}px)`;
-  }, { passive: true });
-}
+  /* ---------- ACTIVE NAV LINK ---------- */
+  const sections  = document.querySelectorAll('section[id], div[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
-// ── Hero stagger entry animation ─────────────────────────
-window.addEventListener('DOMContentLoaded', () => {
-  const heroEls = document.querySelectorAll('.hero-tag, .hero-title, .hero-pills, .hero-card');
-  heroEls.forEach((el, i) => {
-    el.style.opacity   = '0';
-    el.style.transform = 'translateY(22px)';
-    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-    setTimeout(() => {
-      el.style.opacity   = '1';
-      el.style.transform = 'none';
-    }, 200 + i * 150);
-  });
+  const activeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navAnchors.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    },
+    { rootMargin: '-40% 0px -55% 0px' }
+  );
+  sections.forEach(s => activeObserver.observe(s));
+
+  /* ---------- DATE MIN ---------- */
+  const dateInput = document.getElementById('date');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+  }
+
+  /* ---------- HERO PARALLAX (desktop) ---------- */
+  const heroBg = document.querySelector('.hero-bg');
+  if (heroBg && window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+      heroBg.style.transform = `translateY(${window.scrollY * 0.28}px)`;
+    }, { passive: true });
+  }
+
+  /* ---------- BOOKING FORM ---------- */
+  const form      = document.getElementById('bookingForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const success   = document.getElementById('formSuccess');
+
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        form.reset();
+        success.classList.add('visible');
+        setTimeout(() => success.classList.remove('visible'), 6000);
+      }, 1200);
+    });
+  }
+
 });
